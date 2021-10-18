@@ -7,7 +7,6 @@ resource "aws_instance" "tf" {
   key_name               = var.key_name
   tags                   = merge({ Name = var.vmname }, tomap(var.additional_tags))
   depends_on             = [aws_security_group.security-group]
-  availability_zone      = var.availability_zone
 }
 
 # aws_security_group creation
