@@ -1,14 +1,13 @@
 # aws_instance creation
-resource "aws_instance" "server" {
+resource "aws_instance" "tf" {
   ami                    = var.ami
   instance_type          = var.instance_type
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [aws_security_group.security-group.id]
   key_name               = var.key_name
-  # user_data              = data.template_file.user_data_mongodb_server.rendered
-  tags              = merge({ Name = var.instanceName }, tomap(var.additional_tags))
-  depends_on        = [aws_security_group.security-group]
-  availability_zone = var.availability_zone
+  tags                   = merge({ Name = var.vmname }, tomap(var.additional_tags))
+  depends_on             = [aws_security_group.security-group]
+  availability_zone      = var.availability_zone
 }
 
 # aws_security_group creation
@@ -30,5 +29,5 @@ resource "aws_security_group" "security-group" {
   }
   vpc_id = var.vpc_id
   name   = "${var.instanceName}-security-group"
-  tags   = merge({ Name = "${var.instanceName}-security-group" }, tomap(var.additional_tags))
+  tags   = merge({ Name = "${var.vmname}-security-group" }, tomap(var.additional_tags))
 }
