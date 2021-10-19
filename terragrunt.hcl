@@ -9,8 +9,8 @@ generate "provider" {
 }
 
 inputs = {
-  vmname              ="dodonotdo"
-  key_name            ="dodonotdo"
+  vmname              ="vmname"
+  key_name            ="keyname"
   subnet_id           ="id=subnet-048b89ba98c2f5fbc"
   ami                 ="ami-0567f647e75c7bc05"
   instance_type       ="t2.micro"
@@ -26,7 +26,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket = "tecton-ey-terrafrom-state"
+    bucket = "s3bucketname"
     key = "dodonotdo/${get_terragrunt_dir()}/terraform.tfstate"
     region         = "us-east-2"
     encrypt        = true
