@@ -38,7 +38,7 @@ remote_state {
   }
   config = {
     bucket = "s3bucketname"
-    key = "dodonotdo/${get_terragrunt_dir()}/terraform.tfstate"
+    key = "dodonotdo/dev/terraform.tfstate"
     region         = "us-east-2"
     encrypt        = true
   }
