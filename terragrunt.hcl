@@ -29,8 +29,8 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket = "s3bucketname"
-    key = "dodonotdo/dev/terraform.tfstate"
+    bucket         = "s3bucketname"
+    key            = "dodonotdo/dev/terraform.tfstate"
     region         = "us-east-2"
     encrypt        = true
   }
