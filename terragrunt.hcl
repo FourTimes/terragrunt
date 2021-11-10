@@ -10,15 +10,15 @@ generate "provider" {
 
 inputs = {
   region                    = "us-east-2"
-  eks_cluster_name          = "devops-cluster"
-  environment               = "dev"
+  eks_cluster_name          = "devops-cluster"          # expect your input
+  environment               = "dev"                     # expect your input
   vpc_cidr_block            = "10.68.0.0/16"
-  worker-node-ssh-key       = "keyfile"
-  worker-node-max-size      = 3
-  worker-node-min-size      = 1
-  worker-node-desire-size   = 2
-  worker-node-instance-type = "t2.medium"
-  worker-node-disk-size     = 250
+  worker-node-ssh-key       = "keyfile"                 # expect your input
+  worker-node-max-size      = 3                         # expect your input
+  worker-node-min-size      = 1                         # expect your input
+  worker-node-desire-size   = 2                         # expect your input
+  worker-node-instance-type = "t2.medium"               # expect your input
+  worker-node-disk-size     = 250                       # expect your input
 }
 
 
@@ -29,7 +29,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket         = "s3bucketname"
+    bucket         = "s3bucketname"                     # Bucket name required
     key            = "dodonotdo/dev/terraform.tfstate"
     region         = "us-east-2"
     encrypt        = true
