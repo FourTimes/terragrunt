@@ -8,7 +8,7 @@ variable "public_subnet_cidr_blocks" {
   default = ["10.68.1.0/24", "10.68.2.0/24"]
 }
 variable "availability_zones" {
-  default = ["eu-central-1a", "eu-central-1b"]
+  default = ["us-east-2a", "us-east-2b"]
 }
 variable "region" {}
 variable "eks-cw-logging" {

@@ -9,7 +9,7 @@ generate "provider" {
 }
 
 inputs = {
-  region                    = "eu-central-1"
+  region                    = "us-east-2"
   eks_cluster_name          = "devops-cluster"
   environment               = "dev"
   vpc_cidr_block            = "10.68.0.0/16"
